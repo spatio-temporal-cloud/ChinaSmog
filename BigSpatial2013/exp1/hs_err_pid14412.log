@@ -1,0 +1,827 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xafcefc16, pid=14412, tid=2335316848
+#
+# JRE version: 6.0_20-b20
+# Java VM: OpenJDK Client VM (19.0-b09 mixed mode linux-x86 )
+# Derivative: IcedTea6 1.9.10
+# Distribution: Fedora release 14 (Laughlin), package fedora-55.1.9.10.fc14-i386
+# Problematic frame:
+# J  net.sf.saxon.event.Builder.close()V
+#
+# If you would like to submit a bug report, please include
+# instructions how to reproduce the bug and visit:
+#   http://icedtea.classpath.org/bugzilla
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0947d400):  JavaThread "Thread-14" [_thread_in_Java, id=14447, stack(0x8b2d1000,0x8b322000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=128 (), si_addr=0x00000000
+
+Registers:
+EAX=0xabe47990, EBX=0xabe47990, ECX=0x8bc23828, EDX=0x00000000
+ESP=0x8b31f540, EBP=0x8b31f5cc, ESI=0x8b31f5a8, EDI=0xafcefc00
+EIP=0xafcefc16, CR2=0x00000000, EFLAGS=0x00010246
+
+Register to memory mapping:
+
+EAX=0xabe47990
+{method} 
+ - klass: {other class}
+
+EBX=0xabe47990
+{method} 
+ - klass: {other class}
+
+ECX=0x8bc23828
+net.sf.saxon.tinytree.TinyBuilder 
+ - klass: 'net/sf/saxon/tinytree/TinyBuilder'
+
+EDX=0x00000000
+0x00000000 is pointing to unknown location
+
+ESP=0x8b31f540
+0x8b31f540 is pointing into the stack for thread: 0x0947d400
+"Thread-14" prio=10 tid=0x0947d400 nid=0x386f runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+EBP=0x8b31f5cc
+0x8b31f5cc is pointing into the stack for thread: 0x0947d400
+"Thread-14" prio=10 tid=0x0947d400 nid=0x386f runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+ESI=0x8b31f5a8
+0x8b31f5a8 is pointing into the stack for thread: 0x0947d400
+"Thread-14" prio=10 tid=0x0947d400 nid=0x386f runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+EDI=0xafcefc00
+[CodeBlob (0xafcef988)]
+Framesize: 24
+
+
+Top of Stack: (sp=0x8b31f540)
+0x8b31f540:   ac206e78 00000000 8b31f55c 8b31f580
+0x8b31f550:   afa02e21 000005ee 000005ed 8bc240f8
+0x8b31f560:   8b31f560 ac204ffa 8b31f5a8 ac2122e0
+0x8b31f570:   00000000 8bc23828 00000000 8b31f5a8
+0x8b31f580:   8b31f5cc afa02e21 00000000 8bc26038
+0x8b31f590:   8bc26018 8bc25ff8 8b31f5cc afa02e21
+0x8b31f5a0:   8bc26088 afa02e21 8bc23828 8b31f5ac
+0x8b31f5b0:   abe4598e 8b31f5d4 ac202338 00000000 
+
+Instructions: (pc=0xafcefc16)
+0xafcefc06:   ff 55 83 ec 58 89 4c 24 34 0f be 51 12 83 fa 00
+0xafcefc16:   0f 84 de 06 00 00 0f be 51 13 83 fa 00 0f 84 d1 
+
+Stack: [0x8b2d1000,0x8b322000],  sp=0x8b31f540,  free space=313k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J  net.sf.saxon.event.Builder.close()V
+j  net.sf.saxon.event.ProxyReceiver.close()V+4
+j  net.sf.saxon.event.ComplexContentOutputter.close()V+4
+J  net.sf.saxon.instruct.DocumentInstr.evaluateItem(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/om/Item;
+J  net.sf.saxon.instruct.ElementCreator.processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;
+j  net.sf.saxon.instruct.ApplyTemplates.applyTemplates(Lnet/sf/saxon/om/SequenceIterator;Lnet/sf/saxon/trans/Mode;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/expr/XPathContextMajor;ZI)Lnet/sf/saxon/instruct/TailCall;+349
+j  net.sf.saxon.instruct.ApplyTemplates$ApplyTemplatesPackage.processLeavingTail()Lnet/sf/saxon/instruct/TailCall;+28
+J  net.sf.saxon.instruct.CallTemplate.process(Lnet/sf/saxon/expr/XPathContext;)V
+J  net.sf.saxon.instruct.ElementCreator.processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;
+j  net.sf.saxon.instruct.ApplyTemplates.applyTemplates(Lnet/sf/saxon/om/SequenceIterator;Lnet/sf/saxon/trans/Mode;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/expr/XPathContextMajor;ZI)Lnet/sf/saxon/instruct/TailCall;+349
+j  net.sf.saxon.instruct.ApplyTemplates$ApplyTemplatesPackage.processLeavingTail()Lnet/sf/saxon/instruct/TailCall;+28
+j  net.sf.saxon.instruct.ApplyTemplates.applyTemplates(Lnet/sf/saxon/om/SequenceIterator;Lnet/sf/saxon/trans/Mode;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/expr/XPathContextMajor;ZI)Lnet/sf/saxon/instruct/TailCall;+233
+j  net.sf.saxon.instruct.ApplyTemplates$ApplyTemplatesPackage.processLeavingTail()Lnet/sf/saxon/instruct/TailCall;+28
+j  net.sf.saxon.instruct.CallTemplate.process(Lnet/sf/saxon/expr/XPathContext;)V+64
+j  net.sf.saxon.instruct.CallTemplate.processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;+9
+J  net.sf.saxon.instruct.Choose.processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;
+J  net.sf.saxon.instruct.Block.processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;
+J  net.sf.saxon.instruct.Block.processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;
+j  net.sf.saxon.instruct.ApplyTemplates.applyTemplates(Lnet/sf/saxon/om/SequenceIterator;Lnet/sf/saxon/trans/Mode;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/expr/XPathContextMajor;ZI)Lnet/sf/saxon/instruct/TailCall;+349
+j  net.sf.saxon.instruct.ApplyTemplates.apply(Lnet/sf/saxon/expr/XPathContext;Z)Lnet/sf/saxon/instruct/TailCall;+136
+j  net.sf.saxon.instruct.ApplyTemplates.processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;+6
+J  net.sf.saxon.instruct.Block.processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;
+j  net.sf.saxon.instruct.Instruction.process(Lnet/sf/saxon/expr/XPathContext;)V+2
+j  net.sf.saxon.instruct.ElementCreator.processLeavingTail(Lnet/sf/saxon/expr/XPathContext;)Lnet/sf/saxon/instruct/TailCall;+194
+j  net.sf.saxon.instruct.Template.applyLeavingTail(Lnet/sf/saxon/expr/XPathContext;Lnet/sf/saxon/trans/Rule;)Lnet/sf/saxon/instruct/TailCall;+41
+j  net.sf.saxon.instruct.ApplyTemplates.applyTemplates(Lnet/sf/saxon/om/SequenceIterator;Lnet/sf/saxon/trans/Mode;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/instruct/ParameterSet;Lnet/sf/saxon/expr/XPathContextMajor;ZI)Lnet/sf/saxon/instruct/TailCall;+349
+j  net.sf.saxon.Controller.transformDocument(Lnet/sf/saxon/om/NodeInfo;Ljavax/xml/transform/Result;)V+465
+j  net.sf.saxon.Controller.transform(Ljavax/xml/transform/Source;Ljavax/xml/transform/Result;)V+366
+j  XSLTransformer$1.run()V+749
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x204882]
+V  [libjvm.so+0x2feff9]
+V  [libjvm.so+0x203d7f]
+V  [libjvm.so+0x2041fa]
+V  [libjvm.so+0x204358]
+V  [libjvm.so+0x23aa3f]
+V  [libjvm.so+0x3a7828]
+V  [libjvm.so+0x3a7997]
+V  [libjvm.so+0x2fd171]
+C  [libpthread.so.0+0x5e99]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x09487c00 JavaThread "Thread-15" daemon [_thread_blocked, id=14448, stack(0x8b280000,0x8b2d1000)]
+=>0x0947d400 JavaThread "Thread-14" [_thread_in_Java, id=14447, stack(0x8b2d1000,0x8b322000)]
+  0x0940ac00 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=14445, stack(0x8b3dd000,0x8b42e000)]
+  0x09408c00 JavaThread "CompilerThread0" daemon [_thread_in_native, id=14444, stack(0x8b42e000,0x8b4af000)]
+  0x09407800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=14443, stack(0x8b4af000,0x8b500000)]
+  0x093f8c00 JavaThread "Finalizer" daemon [_thread_blocked, id=14442, stack(0x8b62d000,0x8b67e000)]
+  0x093f7400 JavaThread "Reference Handler" daemon [_thread_blocked, id=14441, stack(0x8b67e000,0x8b6cf000)]
+
+Other Threads:
+  0x093f3400 VMThread [stack: 0x8b6cf000,0x8b750000] [id=14440]
+  0x0940d000 WatcherThread [stack: 0x8b35c000,0x8b3dd000] [id=14446]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 11840K, used 2507K [0x8ba00000, 0x8c6d0000, 0x964a0000)
+  eden space 10560K,  22% used [0x8ba00000, 0x8bc481d8, 0x8c450000)
+  from space 1280K,  13% used [0x8c450000, 0x8c47ab28, 0x8c590000)
+  to   space 1280K,   0% used [0x8c590000, 0x8c590000, 0x8c6d0000)
+ tenured generation   total 26228K, used 18725K [0x964a0000, 0x97e3d000, 0xaba00000)
+   the space 26228K,  71% used [0x964a0000, 0x976e9440, 0x976e9600, 0x97e3d000)
+ compacting perm gen  total 12288K, used 8477K [0xaba00000, 0xac600000, 0xafa00000)
+   the space 12288K,  68% used [0xaba00000, 0xac2474b8, 0xac247600, 0xac600000)
+No shared spaces configured.
+
+Dynamic libraries:
+00110000-0011b000 r-xp 00000000 08:05 6412       /lib/libnss_files-2.13.so
+0011b000-0011c000 r--p 0000a000 08:05 6412       /lib/libnss_files-2.13.so
+0011c000-0011d000 rw-p 0000b000 08:05 6412       /lib/libnss_files-2.13.so
+0011d000-00123000 r-xp 00000000 08:05 6410       /lib/libnss_dns-2.13.so
+00123000-00124000 r--p 00006000 08:05 6410       /lib/libnss_dns-2.13.so
+00124000-00125000 rw-p 00007000 08:05 6410       /lib/libnss_dns-2.13.so
+00125000-00150000 r-xp 00000000 08:05 27199      /usr/lib/gtk-2.0/2.10.0/engines/libclearlooks.so
+00150000-00151000 rw-p 0002b000 08:05 27199      /usr/lib/gtk-2.0/2.10.0/engines/libclearlooks.so
+00151000-00153000 r-xp 00000000 08:05 27677      /usr/lib/gtk-2.0/modules/libpk-gtk-module.so
+00153000-00154000 rw-p 00002000 08:05 27677      /usr/lib/gtk-2.0/modules/libpk-gtk-module.so
+00154000-00159000 r-xp 00000000 08:05 20389      /usr/lib/gtk-2.0/modules/libcanberra-gtk-module.so
+00159000-0015a000 rw-p 00004000 08:05 20389      /usr/lib/gtk-2.0/modules/libcanberra-gtk-module.so
+0015a000-0015e000 r-xp 00000000 08:05 41151      /usr/lib/libcanberra-gtk.so.0.1.6
+0015e000-0015f000 rw-p 00003000 08:05 41151      /usr/lib/libcanberra-gtk.so.0.1.6
+0015f000-00160000 r-xs 00000000 08:06 3811528    /home/jychen/.execoooa4Srp1 (deleted)
+00160000-00167000 r-xp 00000000 08:05 72563      /lib/libcrypt-2.13.so
+00167000-00168000 r--p 00006000 08:05 72563      /lib/libcrypt-2.13.so
+00168000-00169000 rw-p 00007000 08:05 72563      /lib/libcrypt-2.13.so
+00169000-00190000 rw-p 00000000 00:00 0 
+00190000-00192000 r-xp 00000000 08:05 72565      /lib/libkeyutils-1.2.so
+00192000-00193000 rw-p 00001000 08:05 72565      /lib/libkeyutils-1.2.so
+00193000-00194000 r-xs 00000000 08:06 3811771    /home/jychen/.execoooVf0wgQ (deleted)
+00194000-001b1000 r-xp 00000000 08:05 71385      /lib/ld-2.13.so
+001b1000-001b2000 r--p 0001c000 08:05 71385      /lib/ld-2.13.so
+001b2000-001b3000 rw-p 0001d000 08:05 71385      /lib/ld-2.13.so
+001b3000-001b4000 r-xs 00000000 08:06 3812548    /home/jychen/.execooobYRA8E (deleted)
+001b4000-001b5000 r-xs 00000000 08:06 3812623    /home/jychen/.execoooFvKglu (deleted)
+001b5000-00338000 r-xp 00000000 08:05 72275      /lib/libc-2.13.so
+00338000-00339000 ---p 00183000 08:05 72275      /lib/libc-2.13.so
+00339000-0033b000 r--p 00183000 08:05 72275      /lib/libc-2.13.so
+0033b000-0033c000 rw-p 00185000 08:05 72275      /lib/libc-2.13.so
+0033c000-0033f000 rw-p 00000000 00:00 0 
+0033f000-00340000 r-xs 00000000 08:06 3812643    /home/jychen/.execoooL7UGyj (deleted)
+00340000-00341000 r-xs 00000000 08:06 3812688    /home/jychen/.execooo1fLHM8 (deleted)
+00341000-00358000 r-xp 00000000 08:05 14544      /lib/libpthread-2.13.so
+00358000-00359000 r--p 00016000 08:05 14544      /lib/libpthread-2.13.so
+00359000-0035a000 rw-p 00017000 08:05 14544      /lib/libpthread-2.13.so
+0035a000-0035c000 rw-p 00000000 00:00 0 
+0035c000-0035d000 r-xs 00000000 08:06 3812713    /home/jychen/.execoooPbcX1X (deleted)
+0035d000-0035e000 r-xs 00000000 08:06 3812778    /home/jychen/.execooozFotiN (deleted)
+0035e000-00361000 r-xp 00000000 08:05 72536      /lib/libdl-2.13.so
+00361000-00362000 r--p 00002000 08:05 72536      /lib/libdl-2.13.so
+00362000-00363000 rw-p 00003000 08:05 72536      /lib/libdl-2.13.so
+00363000-00364000 r-xs 00000000 08:06 3812781    /home/jychen/.execooocwsICC (deleted)
+00365000-0036c000 r-xp 00000000 08:05 71621      /lib/librt-2.13.so
+0036c000-0036d000 r--p 00006000 08:05 71621      /lib/librt-2.13.so
+0036d000-0036e000 rw-p 00007000 08:05 71621      /lib/librt-2.13.so
+00370000-00384000 r-xp 00000000 08:05 72538      /lib/libz.so.1.2.5
+00384000-00385000 rw-p 00013000 08:05 72538      /lib/libz.so.1.2.5
+00387000-003af000 r-xp 00000000 08:05 72539      /lib/libm-2.13.so
+003af000-003b0000 r--p 00027000 08:05 72539      /lib/libm-2.13.so
+003b0000-003b1000 rw-p 00028000 08:05 72539      /lib/libm-2.13.so
+003b3000-003cf000 r-xp 00000000 08:05 72546      /lib/libgcc_s-4.5.1-20100924.so.1
+003cf000-003d0000 rw-p 0001b000 08:05 72546      /lib/libgcc_s-4.5.1-20100924.so.1
+003d0000-003d6000 r-xp 00000000 08:05 924848     /usr/lib/openoffice.org/basis3.3/program/localebe1.uno.so
+003d6000-003d7000 rw-p 00005000 08:05 924848     /usr/lib/openoffice.org/basis3.3/program/localebe1.uno.so
+003d7000-003f2000 r-xp 00000000 08:05 1053072    /usr/lib/openoffice.org/ure/lib/stocservices.uno.so
+003f2000-003f4000 rw-p 0001a000 08:05 1053072    /usr/lib/openoffice.org/ure/lib/stocservices.uno.so
+003f6000-00401000 r-xp 00000000 08:05 73267      /usr/lib/libpangocairo-1.0.so.0.2800.1
+00401000-00402000 rw-p 0000a000 08:05 73267      /usr/lib/libpangocairo-1.0.so.0.2800.1
+00404000-00486000 r-xp 00000000 08:05 924692     /usr/lib/openoffice.org/basis3.3/program/libxcrli.so
+00486000-0048a000 rw-p 00082000 08:05 924692     /usr/lib/openoffice.org/basis3.3/program/libxcrli.so
+0048f000-004dd000 r-xp 00000000 08:05 73157      /lib/libgobject-2.0.so.0.2600.0
+004dd000-004de000 rw-p 0004d000 08:05 73157      /lib/libgobject-2.0.so.0.2600.0
+004de000-004df000 rw-p 00000000 00:00 0 
+004e2000-004ff000 r-xp 00000000 08:05 22772      /lib/libselinux.so.1
+004ff000-00500000 r--p 0001c000 08:05 22772      /lib/libselinux.so.1
+00500000-00501000 rw-p 0001d000 08:05 22772      /lib/libselinux.so.1
+00501000-00507000 r-xp 00000000 08:05 924652     /usr/lib/openoffice.org/basis3.3/program/desktopbe1.uno.so
+00507000-00508000 rw-p 00005000 08:05 924652     /usr/lib/openoffice.org/basis3.3/program/desktopbe1.uno.so
+0050a000-00520000 r-xp 00000000 08:05 15988      /lib/libresolv-2.13.so
+00520000-00521000 r--p 00015000 08:05 15988      /lib/libresolv-2.13.so
+00521000-00522000 rw-p 00016000 08:05 15988      /lib/libresolv-2.13.so
+00522000-00524000 rw-p 00000000 00:00 0 
+00526000-005b6000 r-xp 00000000 08:05 924710     /usr/lib/openoffice.org/basis3.3/program/libfweli.so
+005b6000-005ba000 rw-p 00090000 08:05 924710     /usr/lib/openoffice.org/basis3.3/program/libfweli.so
+005ba000-005c4000 r-xp 00000000 08:05 924660     /usr/lib/openoffice.org/basis3.3/program/gconfbe1.uno.so
+005c4000-005c5000 rw-p 0000a000 08:05 924660     /usr/lib/openoffice.org/basis3.3/program/gconfbe1.uno.so
+005c5000-005ca000 r-xp 00000000 08:05 40844      /usr/lib/gtk-2.0/2.10.0/immodules/im-ibus.so
+005ca000-005cb000 rw-p 00004000 08:05 40844      /usr/lib/gtk-2.0/2.10.0/immodules/im-ibus.so
+005cb000-0065c000 r-xp 00000000 08:05 1053093    /usr/lib/openoffice.org/ure/lib/libuno_cppuhelpergcc3.so.3
+0065c000-0065f000 rw-p 00091000 08:05 1053093    /usr/lib/openoffice.org/ure/lib/libuno_cppuhelpergcc3.so.3
+00661000-006d8000 r-xp 00000000 08:05 924714     /usr/lib/openoffice.org/basis3.3/program/libsofficeapp.so
+006d8000-006db000 rw-p 00077000 08:05 924714     /usr/lib/openoffice.org/basis3.3/program/libsofficeapp.so
+006db000-006e2000 r-xp 00000000 08:05 924838     /usr/lib/openoffice.org/basis3.3/program/libxmlfdli.so
+006e2000-006e3000 rw-p 00007000 08:05 924838     /usr/lib/openoffice.org/basis3.3/program/libxmlfdli.so
+006e7000-0081a000 r-xp 00000000 08:05 72547      /usr/lib/libX11.so.6.3.0
+0081a000-0081e000 rw-p 00132000 08:05 72547      /usr/lib/libX11.so.6.3.0
+00820000-00822000 r-xp 00000000 08:05 72544      /usr/lib/libXau.so.6.0.0
+00822000-00823000 rw-p 00001000 08:05 72544      /usr/lib/libXau.so.6.0.0
+00825000-00842000 r-xp 00000000 08:05 72545      /usr/lib/libxcb.so.1.1.0
+00842000-00843000 rw-p 0001c000 08:05 72545      /usr/lib/libxcb.so.1.1.0
+00843000-00857000 r-xp 00000000 08:05 24756      /usr/lib/gio/modules/libgioremote-volume-monitor.so
+00857000-00858000 rw-p 00013000 08:05 24756      /usr/lib/gio/modules/libgioremote-volume-monitor.so
+00858000-00864000 r-xp 00000000 08:05 924837     /usr/lib/openoffice.org/basis3.3/program/libxmlfali.so
+00864000-00865000 rw-p 0000b000 08:05 924837     /usr/lib/openoffice.org/basis3.3/program/libxmlfali.so
+0086a000-0086b000 r-xp 00000000 00:00 0          [vdso]
+0086f000-0087f000 r-xp 00000000 08:05 72548      /usr/lib/libXext.so.6.4.0
+0087f000-00880000 rw-p 00010000 08:05 72548      /usr/lib/libXext.so.6.4.0
+00882000-008a9000 r-xp 00000000 08:05 72588      /usr/lib/libpng12.so.0.44.0
+008a9000-008aa000 rw-p 00027000 08:05 72588      /usr/lib/libpng12.so.0.44.0
+008ac000-0093a000 r-xp 00000000 08:05 72585      /usr/lib/libfreetype.so.6.6.0
+0093a000-0093e000 rw-p 0008d000 08:05 72585      /usr/lib/libfreetype.so.6.6.0
+00940000-00943000 r-xp 00000000 08:05 1053065    /usr/lib/openoffice.org/ure/lib/libuno_salhelpergcc3.so.3
+00943000-00944000 rw-p 00002000 08:05 1053065    /usr/lib/openoffice.org/ure/lib/libuno_salhelpergcc3.so.3
+00946000-0097a000 r-xp 00000000 08:05 1053057    /usr/lib/openoffice.org/ure/lib/libuno_cppu.so.3
+0097a000-0097b000 rw-p 00033000 08:05 1053057    /usr/lib/openoffice.org/ure/lib/libuno_cppu.so.3
+0097d000-0099d000 r-xp 00000000 08:05 924818     /usr/lib/openoffice.org/basis3.3/program/libvos3gcc3.so
+0099d000-0099f000 rw-p 0001f000 08:05 924818     /usr/lib/openoffice.org/basis3.3/program/libvos3gcc3.so
+009a1000-009f9000 r-xp 00000000 08:05 924829     /usr/lib/openoffice.org/basis3.3/program/libsotli.so
+009f9000-009fd000 rw-p 00057000 08:05 924829     /usr/lib/openoffice.org/basis3.3/program/libsotli.so
+009ff000-00a05000 r-xp 00000000 08:05 1053056    /usr/lib/openoffice.org/ure/lib/libjvmaccessgcc3.so.3
+00a05000-00a06000 rw-p 00005000 08:05 1053056    /usr/lib/openoffice.org/ure/lib/libjvmaccessgcc3.so.3
+00a0b000-00a71000 r-xp 00000000 08:05 72584      /usr/lib/libpixman-1.so.0.18.4
+00a71000-00a74000 rw-p 00066000 08:05 72584      /usr/lib/libpixman-1.so.0.18.4
+00a76000-00a78000 r-xp 00000000 08:05 72599      /usr/lib/libXcomposite.so.1.0.0
+00a78000-00a79000 rw-p 00001000 08:05 72599      /usr/lib/libXcomposite.so.1.0.0
+00a7b000-00a82000 r-xp 00000000 08:05 72596      /usr/lib/libXrandr.so.2.2.0
+00a82000-00a83000 rw-p 00006000 08:05 72596      /usr/lib/libXrandr.so.2.2.0
+00a85000-00a8c000 r-xp 00000000 08:05 921902     /usr/lib/openoffice.org/basis3.3/program/libi18nisolang1gcc3.so
+00a8c000-00a8d000 rw-p 00006000 08:05 921902     /usr/lib/openoffice.org/basis3.3/program/libi18nisolang1gcc3.so
+00a8f000-00aaa000 r-xp 00000000 08:05 1053060    /usr/lib/openoffice.org/ure/lib/libjvmfwk.so.3
+00aaa000-00aab000 rw-p 0001b000 08:05 1053060    /usr/lib/openoffice.org/ure/lib/libjvmfwk.so.3
+00aad000-00ab2000 r-xp 00000000 08:05 924762     /usr/lib/openoffice.org/basis3.3/program/libi18npaperli.so
+00ab2000-00ab3000 rw-p 00004000 08:05 924762     /usr/lib/openoffice.org/basis3.3/program/libi18npaperli.so
+00ab5000-00ac3000 r-xp 00000000 08:05 924744     /usr/lib/openoffice.org/basis3.3/program/libi18nutilgcc3.so
+00ac3000-00ac5000 rw-p 0000e000 08:05 924744     /usr/lib/openoffice.org/basis3.3/program/libi18nutilgcc3.so
+00ac5000-00ac7000 rw-p 00000000 00:00 0 
+00ac7000-00acf000 r-xp 00000000 08:05 1053045    /usr/lib/openoffice.org/ure/lib/javaloader.uno.so
+00acf000-00ad0000 rw-p 00007000 08:05 1053045    /usr/lib/openoffice.org/ure/lib/javaloader.uno.so
+00ad0000-00ad9000 r-xp 00000000 08:05 72598      /usr/lib/libXcursor.so.1.0.2
+00ad9000-00ada000 rw-p 00008000 08:05 72598      /usr/lib/libXcursor.so.1.0.2
+00ada000-00ae0000 r-xp 00000000 08:05 399760     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/native_threads/libhpi.so
+00ae0000-00ae1000 rw-p 00006000 08:05 399760     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/native_threads/libhpi.so
+00ae1000-00ae4000 r-xp 00000000 08:05 73164      /lib/libgmodule-2.0.so.0.2600.0
+00ae4000-00ae5000 rw-p 00002000 08:05 73164      /lib/libgmodule-2.0.so.0.2600.0
+00ae7000-00b07000 r-xp 00000000 08:05 27580      /usr/lib/libdbus-glib-1.so.2.1.0
+00b07000-00b08000 rw-p 00020000 08:05 27580      /usr/lib/libdbus-glib-1.so.2.1.0
+00b08000-00b11000 r-xp 00000000 08:05 7214       /lib/libkrb5support.so.0.1
+00b11000-00b12000 rw-p 00008000 08:05 7214       /lib/libkrb5support.so.0.1
+00b17000-00b2c000 r-xp 00000000 08:05 924790     /usr/lib/openoffice.org/basis3.3/program/libsaxli.so
+00b2c000-00b2d000 rw-p 00015000 08:05 924790     /usr/lib/openoffice.org/basis3.3/program/libsaxli.so
+00b2f000-00b5f000 r-xp 00000000 08:05 924808     /usr/lib/openoffice.org/basis3.3/program/libfwili.so
+00b5f000-00b61000 rw-p 0002f000 08:05 924808     /usr/lib/openoffice.org/basis3.3/program/libfwili.so
+00b63000-00b7a000 r-xp 00000000 08:05 1053064    /usr/lib/openoffice.org/ure/lib/libstore.so.3
+00b7a000-00b7c000 rw-p 00016000 08:05 1053064    /usr/lib/openoffice.org/ure/lib/libstore.so.3
+00b81000-00b85000 r-xp 00000000 08:05 45593      /lib/libgthread-2.0.so.0.2600.0
+00b85000-00b86000 rw-p 00003000 08:05 45593      /lib/libgthread-2.0.so.0.2600.0
+00b86000-00b92000 r-xp 00000000 08:05 924846     /usr/lib/openoffice.org/basis3.3/program/libxsltfilterli.so
+00b92000-00b93000 rw-p 0000c000 08:05 924846     /usr/lib/openoffice.org/basis3.3/program/libxsltfilterli.so
+00b96000-00b9e000 r-xp 00000000 08:05 72589      /usr/lib/libXrender.so.1.3.0
+00b9e000-00b9f000 rw-p 00008000 08:05 72589      /usr/lib/libXrender.so.1.3.0
+00ba1000-00ba5000 r-xp 00000000 08:05 72597      /usr/lib/libXfixes.so.3.1.0
+00ba5000-00ba6000 rw-p 00003000 08:05 72597      /usr/lib/libXfixes.so.3.1.0
+00ba6000-00bbc000 r-xp 00000000 08:05 35188      /usr/lib/libgvfscommon.so.0.0.0
+00bbc000-00bbd000 rw-p 00016000 08:05 35188      /usr/lib/libgvfscommon.so.0.0.0
+00bbd000-00bc8000 r-xp 00000000 08:05 399757     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/libverify.so
+00bc8000-00bc9000 rw-p 0000b000 08:05 399757     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/libverify.so
+00bc9000-00bcb000 r-xp 00000000 08:05 72594      /usr/lib/libXinerama.so.1.0.0
+00bcb000-00bcc000 rw-p 00001000 08:05 72594      /usr/lib/libXinerama.so.1.0.0
+00bce000-00bd0000 r-xp 00000000 08:05 72600      /usr/lib/libXdamage.so.1.1.0
+00bd0000-00bd1000 rw-p 00001000 08:05 72600      /usr/lib/libXdamage.so.1.1.0
+00bd3000-00c3f000 r-xp 00000000 08:05 926836     /usr/lib/openoffice.org/basis3.3/program/libucbhelper4gcc3.so
+00c3f000-00c42000 rw-p 0006c000 08:05 926836     /usr/lib/openoffice.org/basis3.3/program/libucbhelper4gcc3.so
+00c42000-00c5f000 r-xp 00000000 08:05 924799     /usr/lib/openoffice.org/basis3.3/program/libforli.so
+00c5f000-00c61000 rw-p 0001d000 08:05 924799     /usr/lib/openoffice.org/basis3.3/program/libforli.so
+00c61000-00c87000 r-xp 00000000 08:05 41251      /lib/libexpat.so.1.5.2
+00c87000-00c89000 rw-p 00025000 08:05 41251      /lib/libexpat.so.1.5.2
+00c8b000-00d57000 r-xp 00000000 08:05 1053063    /usr/lib/openoffice.org/ure/lib/libstlport_gcc.so
+00d57000-00d5a000 rw-p 000cc000 08:05 1053063    /usr/lib/openoffice.org/ure/lib/libstlport_gcc.so
+00d5a000-00d5b000 rw-p 00000000 00:00 0 
+00d5d000-00d80000 r-xp 00000000 08:05 924836     /usr/lib/openoffice.org/basis3.3/program/libdeploymentmiscli.so
+00d80000-00d81000 rw-p 00023000 08:05 924836     /usr/lib/openoffice.org/basis3.3/program/libdeploymentmiscli.so
+00d83000-00da2000 r-xp 00000000 08:05 1053059    /usr/lib/openoffice.org/ure/lib/libreg.so.3
+00da2000-00da3000 rw-p 0001e000 08:05 1053059    /usr/lib/openoffice.org/ure/lib/libreg.so.3
+00da5000-00dd9000 r-xp 00000000 08:05 78576      /usr/lib/libicule.so.44.1
+00dd9000-00dda000 rw-p 00034000 08:05 78576      /usr/lib/libicule.so.44.1
+00dde000-00de1000 r-xp 00000000 08:05 72558      /lib/libgpg-error.so.0.7.0
+00de1000-00de2000 rw-p 00002000 08:05 72558      /lib/libgpg-error.so.0.7.0
+00de4000-00de8000 r-xp 00000000 08:05 72613      /lib/libuuid.so.1.3.0
+00de8000-00de9000 rw-p 00003000 08:05 72613      /lib/libuuid.so.1.3.0
+00deb000-00dee000 r-xp 00000000 08:05 72568      /lib/libcom_err.so.2.1
+00dee000-00def000 rw-p 00002000 08:05 72568      /lib/libcom_err.so.2.1
+00df1000-00df8000 r-xp 00000000 08:05 72614      /usr/lib/libSM.so.6.0.0
+00df8000-00df9000 rw-p 00006000 08:05 72614      /usr/lib/libSM.so.6.0.0
+00df9000-00e88000 r-xp 00000000 08:05 1053039    /usr/lib/openoffice.org/ure/lib/bootstrap.uno.so
+00e88000-00e8e000 rw-p 0008f000 08:05 1053039    /usr/lib/openoffice.org/ure/lib/bootstrap.uno.so
+00e8e000-00eff000 r-xp 00000000 08:05 924649     /usr/lib/openoffice.org/basis3.3/program/configmgr.uno.so
+00eff000-00f02000 rw-p 00070000 08:05 924649     /usr/lib/openoffice.org/basis3.3/program/configmgr.uno.so
+00f02000-00f3d000 r-xp 00000000 08:05 924804     /usr/lib/openoffice.org/basis3.3/program/libsplli.so
+00f3d000-00f3f000 rw-p 0003b000 08:05 924804     /usr/lib/openoffice.org/basis3.3/program/libsplli.so
+00f3f000-00f77000 r-xp 00000000 08:05 74885      /usr/lib/libgconf-2.so.4.1.5
+00f77000-00f7a000 rw-p 00037000 08:05 74885      /usr/lib/libgconf-2.so.4.1.5
+00f7a000-00f8a000 r-xp 00000000 08:05 14475      /usr/lib/libavahi-client.so.3.2.7
+00f8a000-00f8b000 rw-p 0000f000 08:05 14475      /usr/lib/libavahi-client.so.3.2.7
+00f8f000-00f91000 r-xp 00000000 08:05 28787      /lib/libnss_mdns4_minimal.so.2
+00f91000-00f92000 rw-p 00001000 08:05 28787      /lib/libnss_mdns4_minimal.so.2
+00f92000-00f98000 r-xp 00000000 08:05 399758     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/libzip.so
+00f98000-00f99000 rw-p 00005000 08:05 399758     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/libzip.so
+00fa3000-00fb1000 r-xp 00000000 08:05 1053049    /usr/lib/openoffice.org/ure/lib/libgcc3_uno.so
+00fb1000-00fb2000 rw-p 0000d000 08:05 1053049    /usr/lib/openoffice.org/ure/lib/libgcc3_uno.so
+00fb2000-01112000 r-xp 00000000 08:05 924667     /usr/lib/openoffice.org/basis3.3/program/i18npool.uno.so
+01112000-01121000 rw-p 00160000 08:05 924667     /usr/lib/openoffice.org/basis3.3/program/i18npool.uno.so
+01121000-01122000 rw-p 00000000 00:00 0 
+01122000-01322000 r-xp 00000000 08:05 924737     /usr/lib/openoffice.org/basis3.3/program/libfwkli.so
+01322000-01330000 rw-p 00200000 08:05 924737     /usr/lib/openoffice.org/basis3.3/program/libfwkli.so
+01330000-01331000 rw-p 00000000 00:00 0 
+01331000-01384000 r-xp 00000000 08:05 74884      /usr/lib/libORBit-2.so.0.1.0
+01384000-0138d000 rw-p 00053000 08:05 74884      /usr/lib/libORBit-2.so.0.1.0
+0138d000-0138e000 rw-p 00000000 00:00 0 
+0138e000-013d1000 r-xp 00000000 08:05 78580      /usr/lib/libibus.so.2.0.0
+013d1000-013d3000 rw-p 00042000 08:05 78580      /usr/lib/libibus.so.2.0.0
+013d3000-0140d000 r-xp 00000000 08:05 924732     /usr/lib/openoffice.org/basis3.3/program/libfilterconfig1.so
+0140d000-0140f000 rw-p 00039000 08:05 924732     /usr/lib/openoffice.org/basis3.3/program/libfilterconfig1.so
+0140f000-01cc3000 r-xp 00000000 08:05 926968     /usr/lib/openoffice.org/basis3.3/program/libscli.so
+01cc3000-01d0b000 rw-p 008b4000 08:05 926968     /usr/lib/openoffice.org/basis3.3/program/libscli.so
+01d0b000-01d10000 rw-p 00000000 00:00 0 
+01d10000-02377000 r-xp 00000000 08:05 924699     /usr/lib/openoffice.org/basis3.3/program/libsvxcoreli.so
+02377000-023c1000 rw-p 00666000 08:05 924699     /usr/lib/openoffice.org/basis3.3/program/libsvxcoreli.so
+023c1000-023c3000 rw-p 00000000 00:00 0 
+023c3000-023e2000 r-xp 00000000 08:05 924764     /usr/lib/openoffice.org/basis3.3/program/liblocaledata_en.so
+023e2000-023e7000 rw-p 0001f000 08:05 924764     /usr/lib/openoffice.org/basis3.3/program/liblocaledata_en.so
+023e7000-02437000 r-xp 00000000 08:05 72070      /usr/lib/libcups.so.2
+02437000-0243a000 rw-p 00050000 08:05 72070      /usr/lib/libcups.so.2
+0243a000-02471000 r-xp 00000000 08:05 17056      /lib/libgssapi_krb5.so.2.2
+02471000-02472000 rw-p 00036000 08:05 17056      /lib/libgssapi_krb5.so.2.2
+02472000-02498000 r-xp 00000000 08:05 7932       /lib/libk5crypto.so.3.1
+02498000-02499000 rw-p 00026000 08:05 7932       /lib/libk5crypto.so.3.1
+02499000-02512000 r-xp 00000000 08:05 34998      /lib/libgcrypt.so.11.5.3
+02512000-02515000 rw-p 00078000 08:05 34998      /lib/libgcrypt.so.11.5.3
+02520000-026eb000 r-xp 00000000 08:05 8952       /usr/lib/libicui18n.so.44.1
+026eb000-026f2000 rw-p 001ca000 08:05 8952       /usr/lib/libicui18n.so.44.1
+026f4000-0282e000 r-xp 00000000 08:05 72723      /usr/lib/libicuuc.so.44.1
+0282e000-02839000 rw-p 00139000 08:05 72723      /usr/lib/libicuuc.so.44.1
+02839000-0283b000 rw-p 00000000 00:00 0 
+0283d000-02886000 r-xp 00000000 08:05 78291      /lib/libdbus-1.so.3.5.2
+02886000-02887000 r--p 00048000 08:05 78291      /lib/libdbus-1.so.3.5.2
+02887000-02888000 rw-p 00049000 08:05 78291      /lib/libdbus-1.so.3.5.2
+02888000-02953000 r-xp 00000000 08:05 74877      /lib/libkrb5.so.3.3
+02953000-02959000 rw-p 000cb000 08:05 74877      /lib/libkrb5.so.3.3
+02959000-02971000 r-xp 00000000 08:05 924918     /usr/lib/openoffice.org/basis3.3/program/sax.uno.so
+02971000-02972000 rw-p 00018000 08:05 924918     /usr/lib/openoffice.org/basis3.3/program/sax.uno.so
+02986000-0299d000 r-xp 00000000 08:05 46302      /lib/libnsl-2.13.so
+0299d000-0299e000 r--p 00016000 08:05 46302      /lib/libnsl-2.13.so
+0299e000-0299f000 rw-p 00017000 08:05 46302      /lib/libnsl-2.13.so
+0299f000-029a1000 rw-p 00000000 00:00 0 
+029a4000-029f6000 r-xp 00000000 08:05 924698     /usr/lib/openoffice.org/basis3.3/program/libpackage2.so
+029f6000-029f9000 rw-p 00052000 08:05 924698     /usr/lib/openoffice.org/basis3.3/program/libpackage2.so
+029f9000-02a1b000 r-xp 00000000 08:05 399729     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/libjava.so
+02a1b000-02a1d000 rw-p 00022000 08:05 399729     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/libjava.so
+02a34000-02a96000 r-xp 00000000 08:05 9047       /usr/lib/libgraphite.so.3.0.0
+02a96000-02a99000 rw-p 00061000 08:05 9047       /usr/lib/libgraphite.so.3.0.0
+02a99000-02ab5000 r-xp 00000000 08:05 1053050    /usr/lib/openoffice.org/ure/lib/libjava_uno.so
+02ab5000-02ab6000 rw-p 0001c000 08:05 1053050    /usr/lib/openoffice.org/ure/lib/libjava_uno.so
+02ab6000-02ad8000 r-xp 00000000 08:05 1053073    /usr/lib/openoffice.org/ure/lib/streams.uno.so
+02ad8000-02ada000 rw-p 00022000 08:05 1053073    /usr/lib/openoffice.org/ure/lib/streams.uno.so
+02ada000-02b2b000 r-xp 00000000 08:05 926964     /usr/lib/openoffice.org/basis3.3/program/libanalysisli.so
+02b2b000-02b2d000 rw-p 00050000 08:05 926964     /usr/lib/openoffice.org/basis3.3/program/libanalysisli.so
+02d48000-02e5f000 r-xp 00000000 08:05 73268      /lib/libgio-2.0.so.0.2600.0
+02e5f000-02e62000 rw-p 00117000 08:05 73268      /lib/libgio-2.0.so.0.2600.0
+032b6000-03399000 r-xp 00000000 08:05 9702       /usr/lib/libstdc++.so.6.0.14
+03399000-0339d000 r--p 000e2000 08:05 9702       /usr/lib/libstdc++.so.6.0.14
+0339d000-0339f000 rw-p 000e6000 08:05 9702       /usr/lib/libstdc++.so.6.0.14
+0339f000-033a5000 rw-p 00000000 00:00 0 
+033a7000-033ef000 r-xp 00000000 08:05 72562      /lib/libfreebl3.so
+033ef000-033f0000 rw-p 00048000 08:05 72562      /lib/libfreebl3.so
+033f0000-033f4000 rw-p 00000000 00:00 0 
+033f6000-0340d000 r-xp 00000000 08:05 72612      /usr/lib/libICE.so.6.3.0
+0340d000-0340f000 rw-p 00016000 08:05 72612      /usr/lib/libICE.so.6.3.0
+0340f000-03410000 rw-p 00000000 00:00 0 
+035b7000-035e4000 r-xp 00000000 08:05 924789     /usr/lib/openoffice.org/basis3.3/program/libavmediali.so
+035e4000-035e6000 rw-p 0002c000 08:05 924789     /usr/lib/openoffice.org/basis3.3/program/libavmediali.so
+0364b000-03661000 r-xp 00000000 08:05 926967     /usr/lib/openoffice.org/basis3.3/program/libdateli.so
+03661000-03662000 rw-p 00016000 08:05 926967     /usr/lib/openoffice.org/basis3.3/program/libdateli.so
+03751000-03762000 r-xp 00000000 08:05 72557      /usr/lib/libtasn1.so.3.1.9
+03762000-03763000 rw-p 00010000 08:05 72557      /usr/lib/libtasn1.so.3.1.9
+037a6000-037b4000 r-xp 00000000 08:05 16207      /lib/libudev.so.0.9.1
+037b4000-037b5000 rw-p 0000d000 08:05 16207      /lib/libudev.so.0.9.1
+03953000-0395c000 r-xp 00000000 08:05 14971      /usr/lib/libltdl.so.7.2.2
+0395c000-0395d000 rw-p 00008000 08:05 14971      /usr/lib/libltdl.so.7.2.2
+039c2000-039c7000 r-xp 00000000 08:05 16290      /usr/lib/libogg.so.0.7.0
+039c7000-039c8000 rw-p 00005000 08:05 16290      /usr/lib/libogg.so.0.7.0
+039ca000-039cc000 r-xp 00000000 08:05 72654      /lib/libutil-2.13.so
+039cc000-039cd000 r--p 00001000 08:05 72654      /lib/libutil-2.13.so
+039cd000-039ce000 rw-p 00002000 08:05 72654      /lib/libutil-2.13.so
+039d0000-039f9000 r-xp 00000000 08:05 72681      /usr/lib/libvorbis.so.0.4.4
+039f9000-039fa000 rw-p 00028000 08:05 72681      /usr/lib/libvorbis.so.0.4.4
+03b0d000-03b1c000 r-xp 00000000 08:05 72686      /usr/lib/libtdb.so.1.2.1
+03b1c000-03b1d000 rw-p 0000e000 08:05 72686      /usr/lib/libtdb.so.1.2.1
+03b1f000-03b27000 r-xp 00000000 08:05 72685      /usr/lib/libvorbisfile.so.3.3.2
+03b27000-03b28000 rw-p 00007000 08:05 72685      /usr/lib/libvorbisfile.so.3.3.2
+03b45000-03b55000 r-xp 00000000 08:05 72687      /usr/lib/libcanberra.so.0.2.4
+03b55000-03b56000 rw-p 0000f000 08:05 72687      /usr/lib/libcanberra.so.0.2.4
+03b61000-03b6d000 r-xp 00000000 08:05 20166      /usr/lib/libavahi-common.so.3.5.2
+03b6d000-03b6e000 rw-p 0000b000 08:05 20166      /usr/lib/libavahi-common.so.3.5.2
+03ba8000-03bea000 r-xp 00000000 08:05 72661      /usr/lib/libjpeg.so.62.0.0
+03bea000-03beb000 rw-p 00041000 08:05 72661      /usr/lib/libjpeg.so.62.0.0
+03beb000-03bfb000 rw-p 00000000 00:00 0 
+03c93000-03e12000 r-xp 00000000 08:05 72530      /lib/libdb-4.8.so
+03e12000-03e15000 rw-p 0017e000 08:05 72530      /lib/libdb-4.8.so
+0449c000-04800000 r-xp 00000000 08:05 924807     /usr/lib/openoffice.org/basis3.3/program/libxoli.so
+04800000-04821000 rw-p 00363000 08:05 924807     /usr/lib/openoffice.org/basis3.3/program/libxoli.so
+04821000-04822000 rw-p 00000000 00:00 0 
+048a0000-048bc000 r-xp 00000000 08:05 1053042    /usr/lib/openoffice.org/ure/lib/introspection.uno.so
+048bc000-048bd000 rw-p 0001c000 08:05 1053042    /usr/lib/openoffice.org/ure/lib/introspection.uno.so
+04afa000-04b24000 r-xp 00000000 08:05 49569      /usr/lib/gio/modules/libgvfsdbus.so
+04b24000-04b25000 rw-p 0002a000 08:05 49569      /usr/lib/gio/modules/libgvfsdbus.so
+050c1000-050dd000 r-xp 00000000 08:05 1053070    /usr/lib/openoffice.org/ure/lib/reflection.uno.so
+050dd000-050df000 rw-p 0001c000 08:05 1053070    /usr/lib/openoffice.org/ure/lib/reflection.uno.so
+05237000-0566f000 r-xp 00000000 08:05 926974     /usr/lib/openoffice.org/basis3.3/program/libvclli.so
+0566f000-05686000 rw-p 00438000 08:05 926974     /usr/lib/openoffice.org/basis3.3/program/libvclli.so
+05686000-0568a000 rw-p 00000000 00:00 0 
+0568c000-0571e000 r-xp 00000000 08:05 924825     /usr/lib/openoffice.org/basis3.3/program/liblngli.so
+0571e000-05723000 rw-p 00091000 08:05 924825     /usr/lib/openoffice.org/basis3.3/program/liblngli.so
+0573d000-05770000 r-xp 00000000 08:05 73262      /usr/lib/libfontconfig.so.1.4.4
+05770000-05772000 rw-p 00032000 08:05 73262      /usr/lib/libfontconfig.so.1.4.4
+05774000-05794000 r-xp 00000000 08:05 73269      /usr/lib/libgdk_pixbuf-2.0.so.0.2200.0
+05794000-05795000 rw-p 0001f000 08:05 73269      /usr/lib/libgdk_pixbuf-2.0.so.0.2200.0
+05797000-0592a000 r-xp 00000000 08:05 924814     /usr/lib/openoffice.org/basis3.3/program/libsbli.so
+0592a000-0593b000 rw-p 00193000 08:05 924814     /usr/lib/openoffice.org/basis3.3/program/libsbli.so
+0593b000-0593c000 rw-p 00000000 00:00 0 
+05964000-05a71000 r-xp 00000000 08:05 7951       /lib/libglib-2.0.so.0.2600.0
+05a71000-05a72000 rw-p 0010d000 08:05 7951       /lib/libglib-2.0.so.0.2600.0
+05a74000-05a9f000 r-xp 00000000 08:05 924809     /usr/lib/openoffice.org/basis3.3/program/libforuili.so
+05a9f000-05aa1000 rw-p 0002b000 08:05 924809     /usr/lib/openoffice.org/basis3.3/program/libforuili.so
+05aa5000-05b5c000 r-xp 00000000 08:05 23213      /usr/lib/libgdk-x11-2.0.so.0.2200.0
+05b5c000-05b5f000 rw-p 000b7000 08:05 23213      /usr/lib/libgdk-x11-2.0.so.0.2200.0
+05b61000-05b6f000 r-xp 00000000 08:05 23519      /usr/lib/libXi.so.6.1.0
+05b6f000-05b70000 rw-p 0000d000 08:05 23519      /usr/lib/libXi.so.6.1.0
+05b72000-05c16000 r-xp 00000000 08:05 924676     /usr/lib/openoffice.org/basis3.3/program/libtlli.so
+05c16000-05c19000 rw-p 000a3000 08:05 924676     /usr/lib/openoffice.org/basis3.3/program/libtlli.so
+05c1b000-05c6e000 r-xp 00000000 08:05 924738     /usr/lib/openoffice.org/basis3.3/program/libucpfile1.so
+05c6e000-05c71000 rw-p 00053000 08:05 924738     /usr/lib/openoffice.org/basis3.3/program/libucpfile1.so
+05c73000-06029000 r-xp 00000000 08:05 924715     /usr/lib/openoffice.org/basis3.3/program/libsvtli.so
+06029000-0604b000 rw-p 003b6000 08:05 924715     /usr/lib/openoffice.org/basis3.3/program/libsvtli.so
+0604b000-0604c000 rw-p 00000000 00:00 0 
+0604e000-06307000 r-xp 00000000 08:05 924746     /usr/lib/openoffice.org/basis3.3/program/libtkli.so
+06307000-0633b000 rw-p 002b9000 08:05 924746     /usr/lib/openoffice.org/basis3.3/program/libtkli.so
+0633b000-0633d000 rw-p 00000000 00:00 0 
+0633f000-066e6000 r-xp 00000000 08:05 924736     /usr/lib/openoffice.org/basis3.3/program/libsfxli.so
+066e6000-06700000 rw-p 003a6000 08:05 924736     /usr/lib/openoffice.org/basis3.3/program/libsfxli.so
+06700000-06701000 rw-p 00000000 00:00 0 
+06703000-067ee000 r-xp 00000000 08:05 924674     /usr/lib/openoffice.org/basis3.3/program/libdrawinglayerli.so
+067ee000-067f4000 rw-p 000eb000 08:05 924674     /usr/lib/openoffice.org/basis3.3/program/libdrawinglayerli.so
+067f6000-06826000 r-xp 00000000 08:05 924832     /usr/lib/openoffice.org/basis3.3/program/libcanvastoolsli.so
+06826000-06828000 rw-p 0002f000 08:05 924832     /usr/lib/openoffice.org/basis3.3/program/libcanvastoolsli.so
+0682a000-069ff000 r-xp 00000000 08:05 924842     /usr/lib/openoffice.org/basis3.3/program/libeditengli.so
+069ff000-06a0c000 rw-p 001d5000 08:05 924842     /usr/lib/openoffice.org/basis3.3/program/libeditengli.so
+06a0c000-06a0d000 rw-p 00000000 00:00 0 
+06a0f000-06a5b000 r-xp 00000000 08:05 924800     /usr/lib/openoffice.org/basis3.3/program/libcppcanvasli.so
+06a5b000-06a5f000 rw-p 0004c000 08:05 924800     /usr/lib/openoffice.org/basis3.3/program/libcppcanvasli.so
+06a61000-06ab5000 r-xp 00000000 08:05 924817     /usr/lib/openoffice.org/basis3.3/program/libvclplug_gtkli.so
+06ab5000-06abc000 rw-p 00053000 08:05 924817     /usr/lib/openoffice.org/basis3.3/program/libvclplug_gtkli.so
+06ae8000-06ca2000 r-xp 00000000 08:05 1053092    /usr/lib/openoffice.org/ure/lib/libuno_sal.so.3
+06ca2000-06cb5000 rw-p 001b9000 08:05 1053092    /usr/lib/openoffice.org/ure/lib/libuno_sal.so.3
+06cb5000-06cb9000 rw-p 00000000 00:00 0 
+06cbb000-06de9000 r-xp 00000000 08:05 924835     /usr/lib/openoffice.org/basis3.3/program/libcomphelp4gcc3.so
+06de9000-06df2000 rw-p 0012e000 08:05 924835     /usr/lib/openoffice.org/basis3.3/program/libcomphelp4gcc3.so
+06df2000-06df3000 rw-p 00000000 00:00 0 
+06df5000-06f0b000 r-xp 00000000 08:05 924815     /usr/lib/openoffice.org/basis3.3/program/libutlli.so
+06f0b000-06f12000 rw-p 00115000 08:05 924815     /usr/lib/openoffice.org/basis3.3/program/libutlli.so
+06f12000-06f13000 rw-p 00000000 00:00 0 
+06f15000-06faf000 r-xp 00000000 08:05 924743     /usr/lib/openoffice.org/basis3.3/program/libbasegfxli.so
+06faf000-06fb0000 rw-p 0009a000 08:05 924743     /usr/lib/openoffice.org/basis3.3/program/libbasegfxli.so
+06fb2000-07084000 r-xp 00000000 08:05 926986     /usr/lib/openoffice.org/basis3.3/program/libvclplug_genli.so
+07084000-0708d000 rw-p 000d2000 08:05 926986     /usr/lib/openoffice.org/basis3.3/program/libvclplug_genli.so
+0708d000-0708e000 rw-p 00000000 00:00 0 
+07100000-0739c000 r-xp 00000000 08:05 924833     /usr/lib/openoffice.org/basis3.3/program/libsvxli.so
+0739c000-073b8000 rw-p 0029c000 08:05 924833     /usr/lib/openoffice.org/basis3.3/program/libsvxli.so
+073b8000-073b9000 rw-p 00000000 00:00 0 
+07407000-074fa000 r-xp 00000000 08:05 924801     /usr/lib/openoffice.org/basis3.3/program/libsvlli.so
+074fa000-07500000 rw-p 000f3000 08:05 924801     /usr/lib/openoffice.org/basis3.3/program/libsvlli.so
+07598000-075d8000 r-xp 00000000 08:05 924821     /usr/lib/openoffice.org/basis3.3/program/libucb1.so
+075d8000-075db000 rw-p 0003f000 08:05 924821     /usr/lib/openoffice.org/basis3.3/program/libucb1.so
+075f5000-076a9000 r-xp 00000000 08:05 73264      /usr/lib/libcairo.so.2.11000.2
+076a9000-076ab000 rw-p 000b3000 08:05 73264      /usr/lib/libcairo.so.2.11000.2
+076ab000-076ad000 rw-p 00000000 00:00 0 
+076af000-076f6000 r-xp 00000000 08:05 73265      /usr/lib/libpango-1.0.so.0.2800.1
+076f6000-076f8000 rw-p 00047000 08:05 73265      /usr/lib/libpango-1.0.so.0.2800.1
+076fa000-07726000 r-xp 00000000 08:05 73266      /usr/lib/libpangoft2-1.0.so.0.2800.1
+07726000-07727000 rw-p 0002c000 08:05 73266      /usr/lib/libpangoft2-1.0.so.0.2800.1
+07729000-07bc5000 r-xp 00000000 08:05 23335      /usr/lib/libgtk-x11-2.0.so.0.2200.0
+07bc5000-07bcb000 rw-p 0049c000 08:05 23335      /usr/lib/libgtk-x11-2.0.so.0.2200.0
+07bcb000-07bcc000 rw-p 00000000 00:00 0 
+07c8a000-07ca7000 r-xp 00000000 08:05 73163      /usr/lib/libatk-1.0.so.0.3209.1
+07ca7000-07ca9000 rw-p 0001d000 08:05 73163      /usr/lib/libatk-1.0.so.0.3209.1
+07cab000-07df2000 r-xp 00000000 08:05 42192      /usr/lib/libxml2.so.2.7.7
+07df2000-07df7000 rw-p 00146000 08:05 42192      /usr/lib/libxml2.so.2.7.7
+07df7000-07df8000 rw-p 00000000 00:00 0 
+08048000-0804a000 r-xp 00000000 08:05 144334     /usr/lib/openoffice.org3/program/soffice.bin
+0804a000-0804f000 rw-p 00001000 08:05 144334     /usr/lib/openoffice.org3/program/soffice.bin
+080e7000-0818c000 r-xp 00000000 08:05 35002      /usr/lib/libgnutls.so.26.14.12
+0818c000-08190000 rw-p 000a5000 08:05 35002      /usr/lib/libgnutls.so.26.14.12
+083d3000-083ee000 r-xp 00000000 08:05 1053046    /usr/lib/openoffice.org/ure/lib/javavm.uno.so
+083ee000-083ef000 rw-p 0001b000 08:05 1053046    /usr/lib/openoffice.org/ure/lib/javavm.uno.so
+083ef000-08835000 r-xp 00000000 08:05 399711     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/client/libjvm.so
+08835000-08859000 rw-p 00445000 08:05 399711     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/client/libjvm.so
+08859000-08c75000 rw-p 00000000 00:00 0 
+08cde000-08d26000 r-xp 00000000 08:05 924830     /usr/lib/openoffice.org/basis3.3/program/libuuili.so
+08d26000-08d29000 rw-p 00047000 08:05 924830     /usr/lib/openoffice.org/basis3.3/program/libuuili.so
+09106000-09167000 r-xp 00000000 08:05 924827     /usr/lib/openoffice.org/basis3.3/program/libunoxmlli.so
+09167000-0916f000 rw-p 00061000 08:05 924827     /usr/lib/openoffice.org/basis3.3/program/libunoxmlli.so
+0926d000-094ab000 rw-p 00000000 00:00 0          [heap]
+4157e000-423bb000 r-xp 00000000 08:05 41274      /usr/lib/libicudata.so.44.1
+423bb000-423bc000 rw-p 00e3c000 08:05 41274      /usr/lib/libicudata.so.44.1
+89e70000-89efc000 rw-p 00000000 00:00 0 
+89efc000-8af00000 r--s 00000000 08:05 133954     /usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc
+8af00000-8afb0000 rw-p 00000000 00:00 0 
+8afb0000-8b000000 ---p 00000000 00:00 0 
+8b000000-8b04c000 rw-p 00000000 00:00 0 
+8b04c000-8b070000 r--s 00000000 08:05 6843       /usr/share/fonts/liberation/LiberationSerif-Regular.ttf
+8b070000-8b100000 rw-p 00000000 00:00 0 
+8b100000-8b1ff000 rw-p 00000000 00:00 0 
+8b1ff000-8b200000 ---p 00000000 00:00 0 
+8b200000-8b280000 rw-p 00000000 00:00 0 
+8b280000-8b283000 ---p 00000000 00:00 0 
+8b283000-8b2d1000 rw-p 00000000 00:00 0 
+8b2d1000-8b2d4000 ---p 00000000 00:00 0 
+8b2d4000-8b322000 rw-p 00000000 00:00 0 
+8b322000-8b35c000 r--s 0012a000 08:05 924645     /usr/lib/openoffice.org/basis3.3/program/classes/unoil.jar
+8b35c000-8b35d000 ---p 00000000 00:00 0 
+8b35d000-8b3dd000 rw-p 00000000 00:00 0 
+8b3dd000-8b3e0000 ---p 00000000 00:00 0 
+8b3e0000-8b42e000 rw-p 00000000 00:00 0 
+8b42e000-8b431000 ---p 00000000 00:00 0 
+8b431000-8b4af000 rw-p 00000000 00:00 0 
+8b4af000-8b4b2000 ---p 00000000 00:00 0 
+8b4b2000-8b500000 rw-p 00000000 00:00 0 
+8b500000-8b521000 rw-p 00000000 00:00 0 
+8b521000-8b600000 ---p 00000000 00:00 0 
+8b606000-8b61d000 r--s 0046f000 08:05 924643     /usr/lib/openoffice.org/basis3.3/program/classes/saxon9.jar
+8b61d000-8b62d000 rw-p 00000000 00:00 0 
+8b62d000-8b630000 ---p 00000000 00:00 0 
+8b630000-8b67e000 rw-p 00000000 00:00 0 
+8b67e000-8b681000 ---p 00000000 00:00 0 
+8b681000-8b6cf000 rw-p 00000000 00:00 0 
+8b6cf000-8b6d0000 ---p 00000000 00:00 0 
+8b6d0000-8b750000 rw-p 00000000 00:00 0 
+8b750000-8b8df000 r--s 038c4000 08:05 399804     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/rt.jar
+8b8df000-8b8e6000 rw-p 00000000 00:00 0 
+8b8e6000-8b934000 rw-p 00000000 00:00 0 
+8b934000-8b942000 rw-p 00000000 00:00 0 
+8b942000-8b9df000 rw-p 00000000 00:00 0 
+8b9df000-8b9e5000 rw-p 00000000 00:00 0 
+8b9e5000-8b9ff000 rw-p 00000000 00:00 0 
+8b9ff000-8c6d0000 rw-p 00000000 00:00 0 
+8c6d0000-964a0000 rw-p 00000000 00:00 0 
+964a0000-97e3d000 rw-p 00000000 00:00 0 
+97e3d000-aba00000 rw-p 00000000 00:00 0 
+aba00000-ac600000 rw-p 00000000 00:00 0 
+ac600000-afa00000 rw-p 00000000 00:00 0 
+afa00000-afd00000 rwxp 00000000 00:00 0 
+afd00000-b1aff000 rw-p 00000000 00:00 0 
+b1aff000-b1b00000 ---p 00000000 00:00 0 
+b1b07000-b1b08000 rw-s 00000000 08:06 3811771    /home/jychen/.execoooVf0wgQ (deleted)
+b1b08000-b1b14000 r--s 00034000 08:05 1053084    /usr/lib/openoffice.org/ure/share/java/ridl.jar
+b1b14000-b1b21000 r--s 000bb000 08:05 405023     /usr/share/java/lucene-2.4.1.jar
+b1b21000-b1b61000 rw-p 00000000 00:00 0 
+b1b61000-b1bff000 rw-p 00000000 00:00 0 
+b1bff000-b1c00000 ---p 00000000 00:00 0 
+b1c00000-b2400000 rw-p 00000000 00:00 0 
+b2400000-b2421000 rw-p 00000000 00:00 0 
+b2421000-b2500000 ---p 00000000 00:00 0 
+b2503000-b250a000 rw-p 00000000 00:00 0 
+b250a000-b2524000 rw-p 00000000 00:00 0 
+b2524000-b2530000 rw-p 00000000 00:00 0 
+b2530000-b25a4000 rw-p 00000000 00:00 0 
+b25a4000-b25ac000 rw-s 00000000 08:05 141841     /tmp/hsperfdata_jychen/14412
+b25ac000-b25ad000 rw-p 00000000 00:00 0 
+b25ad000-b25ae000 r--p 00000000 00:00 0 
+b25ae000-b25fe000 rw-p 00000000 00:00 0 
+b25fe000-b25ff000 ---p 00000000 00:00 0 
+b25ff000-b2e5f000 rw-p 00000000 00:00 0 
+b2e5f000-b2e80000 r--s 00000000 08:05 6804       /usr/share/fonts/liberation/LiberationSans-Regular.ttf
+b2e80000-b2f00000 rw-p 00000000 00:00 0 
+b2f00000-b2f21000 rw-p 00000000 00:00 0 
+b2f21000-b3000000 ---p 00000000 00:00 0 
+b3006000-b3007000 rw-s 00000000 08:06 3812781    /home/jychen/.execooocwsICC (deleted)
+b3007000-b3008000 rw-s 00000000 08:06 3812778    /home/jychen/.execooozFotiN (deleted)
+b3008000-b3028000 rw-p 00000000 00:00 0 
+b3028000-b30cf000 r--s 00000000 08:05 6813       /usr/share/fonts/dejavu/DejaVuSans.ttf
+b30cf000-b30ff000 rw-p 00000000 00:00 0 
+b30ff000-b3100000 ---p 00000000 00:00 0 
+b3100000-b3900000 rw-p 00000000 00:00 0 
+b3900000-b39ad000 rw-p 00000000 00:00 0 
+b39ad000-b3a00000 ---p 00000000 00:00 0 
+b3a00000-b3a01000 rw-s 00000000 08:06 3812713    /home/jychen/.execoooPbcX1X (deleted)
+b3a01000-b3a02000 rw-s 00000000 08:06 3812688    /home/jychen/.execooo1fLHM8 (deleted)
+b3a02000-b3a03000 rw-s 00000000 08:06 3812643    /home/jychen/.execoooL7UGyj (deleted)
+b3a03000-b3a04000 r--s 00003000 08:05 924633     /usr/lib/openoffice.org/basis3.3/program/classes/XSLTFilter.jar
+b3a04000-b3a06000 r--s 00010000 08:05 924630     /usr/lib/openoffice.org/basis3.3/program/classes/ScriptFramework.jar
+b3a06000-b3a08000 r--s 0000d000 08:05 1053082    /usr/lib/openoffice.org/ure/share/java/juh.jar
+b3a08000-b3a28000 rw-p 00000000 00:00 0 
+b3a28000-b3acf000 r--p 00000000 08:05 6813       /usr/share/fonts/dejavu/DejaVuSans.ttf
+b3acf000-b3aff000 rw-p 00000000 00:00 0 
+b3aff000-b3b00000 ---p 00000000 00:00 0 
+b3b00000-b4300000 rw-p 00000000 00:00 0 
+b4300000-b4321000 rw-p 00000000 00:00 0 
+b4321000-b4400000 ---p 00000000 00:00 0 
+b4400000-b4401000 rw-s 00000000 08:06 3812623    /home/jychen/.execoooFvKglu (deleted)
+b4401000-b4404000 r--s 00019000 08:05 1053083    /usr/lib/openoffice.org/ure/share/java/jurt.jar
+b4404000-b4407000 r--s 0007d000 08:05 399787     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/jsse.jar
+b4407000-b440f000 r--s 000e5000 08:05 408951     /usr/share/java/hsqldb-1.8.0.10.jar
+b440f000-b447f000 rw-p 00000000 00:00 0 
+b447f000-b449f000 rw-p 00000000 00:00 0 
+b449f000-b44ff000 rw-s 00000000 00:04 710148140  /SYSV00000000 (deleted)
+b44ff000-b4500000 ---p 00000000 00:00 0 
+b4500000-b4d00000 rw-p 00000000 00:00 0 
+b4d00000-b4d21000 rw-p 00000000 00:00 0 
+b4d21000-b4e00000 ---p 00000000 00:00 0 
+b4e00000-b4e02000 r--s 00000000 08:05 1053079    /usr/lib/openoffice.org/ure/share/java/java_uno.jar
+b4e02000-b4e07000 r--s 00049000 08:05 426950     /usr/share/java/bsh-1.3.0.jar
+b4e07000-b4ee7000 rw-p 00000000 00:00 0 
+b4ee7000-b4ee8000 ---p 00000000 00:00 0 
+b4ee8000-b5748000 rw-p 00000000 00:00 0 
+b5748000-b5751000 r--s 00065000 08:05 399676     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/ext/gnome-java-bridge.jar
+b5751000-b5756000 r--s 00045000 08:05 399798     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/netx.jar
+b5756000-b5876000 rw-p 00000000 00:00 0 
+b5876000-b5877000 rw-s 00000000 08:06 3812548    /home/jychen/.execooobYRA8E (deleted)
+b5877000-b587a000 r--s 0000f000 08:05 399680     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/ext/pulse-java.jar
+b587a000-b587d000 r--s 00000000 08:05 19230      /var/cache/fontconfig/87f5e051180a7a75f16eb6fe7dbd3749-le32d4.cache-3
+b587d000-b5d9d000 rw-p 00000000 00:00 0 
+b5d9d000-b5d9e000 r--s 00000000 08:05 1053085    /usr/lib/openoffice.org/ure/share/java/unoloader.jar
+b5d9e000-b5d9f000 rw-s 00000000 08:06 3811528    /home/jychen/.execoooa4Srp1 (deleted)
+b5d9f000-b5e7f000 rw-p 00000000 00:00 0 
+b5e7f000-b5e81000 r--s 0001d000 08:05 399799     /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/plugin.jar
+b5e81000-b5e87000 r--s 00000000 08:05 19229      /var/cache/fontconfig/b79f3aaa7d385a141ab53ec885cc22a8-le32d4.cache-3
+b5e87000-b5e89000 r--s 00000000 08:05 11817      /var/cache/fontconfig/0b1bcc92b4d25cc154d77dafe3bceaa0-le32d4.cache-3
+b5e89000-b5e8a000 r--s 00000000 08:05 61633      /var/cache/fontconfig/afda88ba2c9de689dfd6d8c6d2e4e427-le32d4.cache-3
+b5e8a000-b5e8c000 r--s 00000000 08:05 48591      /var/cache/fontconfig/2e1514a9fdd499050989183bb65136db-le32d4.cache-3
+b5e8c000-b5e8e000 r--s 00000000 08:05 11815      /var/cache/fontconfig/5c755b2f27115486aa6359c84dd3cbda-le32d4.cache-3
+b5e8e000-b5e9e000 rw-p 00000000 00:00 0 
+b5e9e000-b5e9f000 r--s 00000000 08:05 48593      /var/cache/fontconfig/3f821257dd33660ba7bbb45c32deb84c-le32d4.cache-3
+b5e9f000-b5ea1000 r--s 00000000 08:05 11813      /var/cache/fontconfig/830f035fa84a65ce80e050178dbb630d-le32d4.cache-3
+b5ea1000-b5ea2000 r--s 00000000 08:05 48592      /var/cache/fontconfig/81a173283b451552b599cfaafd6236bd-le32d4.cache-3
+b5ea2000-b5ea3000 r--s 00000000 08:05 11810      /var/cache/fontconfig/ac68f755438cc3dc5a526084839fc7ca-le32d4.cache-3
+b5ea3000-b5ea4000 r--s 00000000 08:05 11809      /var/cache/fontconfig/12513961c6e7090f8648812f9eaf65d6-le32d4.cache-3
+b5ea4000-b5ea6000 r--s 00000000 08:05 11808      /var/cache/fontconfig/e26bf336397aae6fcef4d3803472adec-le32d4.cache-3
+b5ea6000-b5f26000 rw-p 00000000 00:00 0 
+b5f26000-b5f27000 r--s 00000000 08:05 48595      /var/cache/fontconfig/a5c2dc934fad9bbf30c854216245519d-le32d4.cache-3
+b5f27000-b5f28000 r--s 00000000 08:05 48596      /var/cache/fontconfig/17e60ccdf2eb53b214a9a5d6663eb217-le32d4.cache-3
+b5f28000-b5f29000 r--s 00000000 08:05 64486      /var/cache/fontconfig/6fcb01a03a016cc71057b587cdea6709-le32d4.cache-3
+b5f29000-b5f2b000 r--s 00000000 08:05 78444      /var/cache/fontconfig/cfde08ab28ad1d91784abb10973575e3-le32d4.cache-3
+b5f2b000-b5f2c000 r--s 00000000 08:05 48654      /var/cache/fontconfig/b887eea8f1b96e1d899b44ed6681fc27-le32d4.cache-3
+b5f2c000-b5f2d000 r--s 00000000 08:05 11804      /var/cache/fontconfig/860639f272b8b4b3094f9e399e41bccd-le32d4.cache-3
+b5f2d000-b5f2e000 r--s 00000000 08:05 11803      /var/cache/fontconfig/211368abcb0ff835c229ff05c9ec01dc-le32d4.cache-3
+b5f2e000-b5f2f000 r--s 00000000 08:05 48653      /var/cache/fontconfig/c46020d7221988a13df853d2b46304fc-le32d4.cache-3
+b5f2f000-b5f3f000 rw-p 00000000 00:00 0 
+b5f3f000-b5f40000 r--s 00000000 08:05 48655      /var/cache/fontconfig/df893b4576ad6107f9397134092c4059-le32d4.cache-3
+b5f40000-b5f41000 r--s 00000000 08:05 11800      /var/cache/fontconfig/900402270e15d763a6e008bb2d4c7686-le32d4.cache-3
+b5f41000-b5f42000 r--s 00000000 08:05 48597      /var/cache/fontconfig/47f48679023f44a4d1e44699a69464f6-le32d4.cache-3
+b5f42000-b5f45000 r--s 00000000 08:05 11795      /var/cache/fontconfig/b67b32625a2bb51b023d3814a918f351-le32d4.cache-3
+b5f45000-b5f4e000 r--s 00000000 08:05 75840      /var/cache/fontconfig/614d1caaa4d7914789410f6367de37ca-le32d4.cache-3
+b5f4e000-b5f6e000 rw-p 00000000 00:00 0 
+b5f6e000-b649b000 r--s 00000000 08:05 924920     /usr/lib/openoffice.org/basis3.3/program/services.rdb
+b649b000-b64a7000 r--s 00000000 08:06 4325896    /home/jychen/.openoffice.org/3/user/extensions/bundled/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend/Linux_x86.rdb
+b64a7000-b64aa000 r--s 00000000 08:06 4325888    /home/jychen/.openoffice.org/3/user/extensions/bundled/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend/common.rdb
+b64aa000-b64e4000 r--s 00000000 08:05 1053088    /usr/lib/openoffice.org/ure/share/misc/services.rdb
+b64e4000-b64f4000 rw-p 00000000 00:00 0 
+b64f4000-b66d3000 r--s 00000000 08:05 924852     /usr/lib/openoffice.org/basis3.3/program/oovbaapi.rdb
+b66d3000-b6d24000 r--s 00000000 08:05 924851     /usr/lib/openoffice.org/basis3.3/program/offapi.rdb
+b6d24000-b6dee000 r--s 00000000 08:05 1053089    /usr/lib/openoffice.org/ure/share/misc/types.rdb
+b6dee000-b6e0e000 rw-p 00000000 00:00 0 
+b6e0e000-b6e0f000 r--s 00000000 08:05 11798      /var/cache/fontconfig/2881ed3fd21ca306ddad6f9b0dd3189f-le32d4.cache-3
+b6e0f000-b6e10000 r--s 00000000 08:05 11797      /var/cache/fontconfig/3c3fb04d32a5211b073874b125d29701-le32d4.cache-3
+b6e10000-b6e17000 r--s 00000000 08:05 11792      /var/cache/fontconfig/12b26b760a24f8b4feb03ad48a333a72-le32d4.cache-3
+b6e17000-b6e37000 rw-p 00000000 00:00 0 
+b6e37000-b7037000 r--p 00000000 08:05 48658      /usr/lib/locale/locale-archive
+b7037000-b7057000 rw-p 00000000 00:00 0 
+b7057000-b7058000 ---p 00000000 00:00 0 
+b7058000-b7887000 rw-p 00000000 00:00 0 
+b7887000-b7888000 r--s 00000000 08:05 11796      /var/cache/fontconfig/e61abf8156cc476151baa07d67337cae-le32d4.cache-3
+b7888000-b7889000 r--s 00000000 08:05 11794      /var/cache/fontconfig/d3379abda271c4acd2ad0c01f565d0b0-le32d4.cache-3
+b7889000-b788a000 r--s 00000000 08:05 11793      /var/cache/fontconfig/b4d0b56f766d89640448751fcd18ec1e-le32d4.cache-3
+b788a000-b7890000 r--s 00000000 08:05 35196      /var/cache/fontconfig/fa1582dab13e7e8e44e5a9424d309f0e-le32d4.cache-3
+b7890000-b78a1000 rw-p 00000000 00:00 0 
+bfaab000-bfaf7000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: abort -Dorg.openoffice.native= -Duser.language=en -Duser.country=US 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre
+JRE_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre
+PATH=/usr/local/texlive/2010/bin/i386-linux/:/usr/local/globus-4.2.0//bin:/usr/local/globus-4.2.0//sbin:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/bin:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/jychen/bin/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/jychen/bin/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/jychen/bin/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/jychen/bin:/opt/apache-ant-1.8.2/bin:/home/jychen/apache-jena-2.7.3/bin:/opt/R-3.0.1/bin:/home/jychen/bin
+USERNAME=jychen
+LD_LIBRARY_PATH=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/client:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386/native_threads:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/i386:/usr/local/globus-4.2.0//lib
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x3d8940], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x3d8940], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x2f9dd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x2f9dd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x2f9dd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x2f9dd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x2f9c40], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x2fc800], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x2fc800], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x2fc800], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x2fc800], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Fedora release 14 (Laughlin)
+
+uname:Linux 2.6.35.12-88.fc14.i686 #1 SMP Thu Mar 31 22:12:38 UTC 2011 i686
+libc:glibc 2.13 NPTL 2.13 
+rlimit: STACK 8192k, CORE 0k, NPROC 1024, NOFILE 1024, AS infinity
+load average:0.22 0.09 0.12
+
+/proc/meminfo:
+MemTotal:        3019588 kB
+MemFree:           80640 kB
+Buffers:           36892 kB
+Cached:           451096 kB
+SwapCached:            0 kB
+Active:          2026772 kB
+Inactive:         790264 kB
+Active(anon):    1868148 kB
+Inactive(anon):   647736 kB
+Active(file):     158624 kB
+Inactive(file):   142528 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
+HighTotal:       2166852 kB
+HighFree:           2716 kB
+LowTotal:         852736 kB
+LowFree:           77924 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               888 kB
+Writeback:             0 kB
+AnonPages:       2329120 kB
+Mapped:           195136 kB
+Shmem:            186784 kB
+Slab:              62048 kB
+SReclaimable:      22304 kB
+SUnreclaim:        39744 kB
+KernelStack:        5152 kB
+PageTables:        20416 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1509792 kB
+Committed_AS:    5859564 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       37916 kB
+VmallocChunk:      43732 kB
+HardwareCorrupted:     0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       4096 kB
+DirectMap4k:       20472 kB
+DirectMap4M:      880640 kB
+
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 3019588k(80640k free), swap 0k(0k free)
+
+vm_info: OpenJDK Client VM (19.0-b09) for linux-x86 JRE (1.6.0_20-b20), built on Oct 19 2011 07:03:36 by "mockbuild" with gcc 4.5.1 20100924 (Red Hat 4.5.1-4)
+
+time: Sat Jul 20 14:45:21 2013
+elapsed time: 9 seconds
+

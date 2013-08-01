@@ -1,0 +1,10 @@
+  城市            总条数 测试条数  测试精度（Avg）
+cityNameCh='西安'  703     150         10.8458
+cityNameCh='广州'  703     150         10.6464
+cityNameCh='福州'  703     150         5.1293
+cityNameCh='上海'  641     100         11.1684
+cityNameCh='杭州'  703     150         9.0214
+cityNameCh='佛山'  703     150         6.1607
+cityNameCh='北京'  689     136         25.5809
+cityNameCh='天津'  703     150         23.6063
+cityNameCh='沈阳'  703     150         16.3542

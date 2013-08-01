@@ -1,0 +1,55 @@
+
+<html>
+  <head>
+    <title>SIMILE Widgets | Exhibit | Examples | US Cities By Population</title>
+    <link rel='stylesheet' href='http://www.simile-widgets.org/styles/common.css' type='text/css' />
+    
+    <link href="cities_Avg.js" type="application/json" rel="exhibit/data" />
+  
+    <!-- Replace the URL here with http://api.simile-widgets.org/exhibit/2.2.0/exhibit-api.js -->
+    <script src="http://api.simile-widgets.org/exhibit/2.2.0/exhibit-api.js"></script>
+    
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAWA_efwiQDHrv6MYDa3HE3hTwM0brOpm-All5BF6PoaKBxRWWERSSjUV6DjLhSErRl9rovZBNtOhNfA&sensor=true"
+            type="text/javascript"></script>
+
+    <!-- Replace the URL here with http://api.simile-widgets.org/exhibit/2.2.0/extensions/map/map-extension.js -->
+    <script src="http://api.simile-widgets.org/exhibit/2.2.0/extensions/map/map-extension.js"></script>
+  </head>
+  <body>
+    <ul id="path">
+      <li><a href="/">SIMILE Widgets</a></li>
+      <li><a href="/exhibit/">Exhibit</a></li>
+      <li><span>Examples: US Cities by Population</span></li>
+    </ul>
+    <div id="header">
+        <h1>US Cities by Population</h1>
+        <p style="width: 35em;">
+            Using <a href="http://simile.mit.edu/exhibit/">Exhibit</a>, you can make this map
+            with just the two simple files you see in <a href="./">this directory</a>.
+            Could you have built the same map with as little effort using anything else?
+        </p>
+    </div>
+    <div id="content">
+        <div ex:role="coder" ex:coderClass="SizeGradient" id="pop-coder"
+           ex:gradientPoints="10, 5; 122, 50" >
+        </div>
+        <div ex:role="view"
+            ex:viewClass="Map"
+            ex:label="Cities"
+            ex:latlng=".latlng"
+            ex:sizeKey=".pop"
+            ex:sizeCoder="pop-coder"
+            ex:sizeLegendLabel="Population"
+            ex:center="29.35,106.33"
+            ex:zoom="4"
+            ex:mapHeight="600"
+            ex:showHeader="false"
+            >
+            <div class="map-lens" ex:role="lens" style="display: none;">
+                <div><b ex:content=".label"></b></div>
+                <div>pm2.5 <span ex:content=".pop"></span></div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+pm2.5_Avg与urban_population的相关系数为0.13956674973981434
+pm2.5_Avg与urban_area的相关系数为0.017221209913834475
+pm2.5_Avg与urban_density的相关系数为0.24003991210150566
+pm2.5_Avg与GDP的相关系数为0.07495297483726865
+pm2.5_Avg与GDP_capita的相关系数为-0.12122404804088698
+
+pm2.5_hour与urban_population的相关系数为0.13827920074649144
+pm2.5_hour与urban_area的相关系数为0.037339355914656626
+pm2.5_hour与urban_density的相关系数为0.22950689874739516
+pm2.5_hour与GDP的相关系数为0.081132236755545
+pm2.5_hour与GDP_capita的相关系数为-0.09012125543158739
+

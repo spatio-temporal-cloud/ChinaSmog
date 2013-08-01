@@ -1,0 +1,40 @@
+select   inland_coastal,avg(avg_p),count(cityNameCh)
+from
+(select  table1.cityNameCh,inland_coastal,avg_p from
+(SELECT Avg(Pm2p5) as avg_p,pm0.City_Data.cityNameCh  FROM pm0.City_Data group by cityNameCh ORDER BY avg_p desc)
+as table1,
+(SELECT inland_coastal,Geography_Data.cityNameCh FROM pm0.Geography_Data )
+as table2
+where
+table1.cityNameCh=table2.cityNameCh)
+as table3
+group by inland_coastal
+;
+          avg(avg_p)
+coastal  39.24604074  27个城市  
+inland   57.33812245   49个城市
+
+select sum(sum_hour),inland_coastal,count(table3.cityNameCh)
+from
+(select table1.cityNameCh,inland_coastal,sum_hour
+from
+(SELECT count(pm0.City_Data.cityNameCh) as sum_hour,pm0.City_Data.cityNameCh  FROM pm0.City_Data where Pm2p5>=75
+group by pm0.City_Data.cityNameCh)
+as table1,
+(SELECT inland_coastal,Geography_Data.cityNameCh FROM pm0.Geography_Data )
+as table2
+where
+table1.cityNameCh=table2.cityNameCh)
+as table3
+group by
+inland_coastal
+;
+
+sum_hour
+3610      coastal 21
+12593     inland  48
+
+avg(sum_hour)
+171.9048   coastal 21
+262.3542   inland  48
+

@@ -1,0 +1,46 @@
+
+select   monsoon,avg(avg_p),count(cityNameCh)
+from
+(select  table1.cityNameCh,monsoon,avg_p from
+(SELECT Avg(Pm2p5) as avg_p,pm0.City_Data.cityNameCh  FROM pm0.City_Data group by cityNameCh ORDER BY avg_p desc)
+as table1,
+(SELECT monsoon,Geography_Data.cityNameCh FROM pm0.Geography_Data )
+as table2
+where
+table1.cityNameCh=table2.cityNameCh)
+as table3
+group by monsoon
+;
+                       Avg_pm2p5
+亚热带季风气候  44    38.87361591
+温带大陆性气候   14   60.65218571
+温带季风气候   15      81.60197333
+热带季风气候    1       11.4399
+高原山地气候   2        35.9743
+
+
+select Avg(sum_hour),monsoon,count(table3.cityNameCh)
+from
+(select table1.cityNameCh,monsoon,sum_hour
+from
+(SELECT count(pm0.City_Data.cityNameCh) as sum_hour,pm0.City_Data.cityNameCh  FROM pm0.City_Data where Pm2p5>=75
+group by pm0.City_Data.cityNameCh)
+as table1,
+(SELECT monsoon,Geography_Data.cityNameCh FROM pm0.Geography_Data )
+as table2
+where
+table1.cityNameCh=table2.cityNameCh)
+as table3
+group by
+monsoon
+;
+
+
+                       hour_pm2p5
+亚热带季风气候  38    129.5789
+温带大陆性气候   14   289.3571
+温带季风气候   15     487.9333
+高原山地气候   2        75.5
+
+
+

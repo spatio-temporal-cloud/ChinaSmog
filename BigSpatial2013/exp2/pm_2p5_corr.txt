@@ -1,0 +1,16 @@
+pm2.5_Avg与pm0.Climate_AvgHighTemp的相关系数为0.305907654504503
+pm2.5_Avg与pm0.Climate_AvgLowTemp的相关系数为-0.11900034736989357
+pm2.5_Avg与pm0.Climate_AvgPreDays的相关系数为-0.7189256884506049
+pm2.5_Avg与pm0.Climate_AvgTemp的相关系数为-0.20791130801744176
+pm2.5_Avg与pm0.Climate_Humidity的相关系数为-0.4698328582601648	
+pm2.5_Avg与pm0.Climate_Precipitation的相关系数为-0.5242365355634637
+pm2.5_Avg与pm0.Climate_SunHours的相关系数为0.3857507506008064	
+
+
+pm2.5_Avg与pm0.Climate_AvgHighTemp的相关系数为0.3547301279768298
+pm2.5_Avg与pm0.Climate_AvgLowTemp的相关系数为-0.07080955582174527
+pm2.5_Avg与pm0.Climate_AvgPreDays的相关系数为-0.7026613858439501
+pm2.5_Avg与pm0.Climate_AvgTemp的相关系数为-0.11876070530018361
+pm2.5_Avg与pm0.Climate_Humidity的相关系数为-0.42001943333118763	
+pm2.5_Avg与pm0.Climate_Precipitation的相关系数为-0.4942710375505847
+pm2.5_Avg与pm0.Climate_SunHours的相关系数为0.3967289085380031	
